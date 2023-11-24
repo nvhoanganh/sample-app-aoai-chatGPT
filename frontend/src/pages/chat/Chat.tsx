@@ -94,6 +94,7 @@ const Chat = () => {
 
     const getUserInfoList = async () => {
         const userInfoList = await getUserInfo();
+        console.log("🚀 ~ file: Chat.tsx:97 ~ getUserInfoList ~ userInfoList:", userInfoList);
         if (userInfoList.length === 0 && window.location.hostname !== "127.0.0.1") {
             setShowAuthMessage(true);
         }
