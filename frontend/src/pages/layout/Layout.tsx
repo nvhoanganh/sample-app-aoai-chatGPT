@@ -5,7 +5,7 @@ import Qps from "../../assets/badge.png";
 import { CopyRegular, ShareRegular } from "@fluentui/react-icons";
 import { CommandBarButton, Dialog, Stack, TextField, ICommandBarStyles, IButtonStyles, DefaultButton  } from "@fluentui/react";
 import { useContext, useEffect, useState } from "react";
-import { HistoryButton, ShareButton } from "../../components/common/Button";
+import { HistoryButton, ShareButton, UploadButton } from "../../components/common/Button";
 import { AppStateContext } from "../../state/AppProvider";
 import { CosmosDBStatus } from "../../api";
 
@@ -83,6 +83,7 @@ const Layout = () => {
                             <h1 className={styles.headerTitle}>QPS AI</h1>
                         </Link>
                     </Stack>
+                    {/* <UploadButton onClick={handleHistoryClick} text={"Upload Documents"}/> */}
                     <Stack horizontal tokens={{ childrenGap: 4 }}>
                             {(appStateContext?.state.isCosmosDBAvailable?.status !== CosmosDBStatus.NotConfigured) && 
                                 <HistoryButton onClick={handleHistoryClick} text={appStateContext?.state?.isChatHistoryOpen ? "Hide chat history" : "Show chat history"}/>    
