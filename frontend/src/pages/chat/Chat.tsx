@@ -161,6 +161,7 @@ const Chat = () => {
 			if (profile && (window as any).dataLayer) {
 				(window as any).dataLayer.push({
 					name: profile.name,
+					email: profile.preferred_username,
 				});
 			}
 			setUserProfile(profile);
