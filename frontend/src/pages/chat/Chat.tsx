@@ -144,19 +144,23 @@ const Chat = () => {
 
 	const getUserInfoList = async () => {
 		const userInfoList = await getUserInfo();
+		console.log(
+			'🚀 ~ file: Chat.tsx:147 ~ getUserInfoList ~ userInfoList:',
+			userInfoList
+		);
 		if (
 			userInfoList.length === 0 &&
 			window.location.hostname !== '127.0.0.1'
 		) {
 			setShowAuthMessage(true);
 		} else {
-			const profile = extractUserProfile(userInfoList[0].user_claims);
-			// const profile = extractUserProfile(
-			// 	sampleProfileClaims[0].user_claims
-			// );
+			// const profile = extractUserProfile(userInfoList[0].user_claims);
+			const profile = extractUserProfile(
+				sampleProfileClaims[0].user_claims
+			);
 			if (profile) {
 				(window as any).dataLayer.push({
-					name: profile.name ,
+					name: profile.name,
 				});
 			}
 			setUserProfile(profile);
