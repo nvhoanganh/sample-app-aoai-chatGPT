@@ -154,11 +154,11 @@ const Chat = () => {
 		) {
 			setShowAuthMessage(true);
 		} else {
-			// const profile = extractUserProfile(userInfoList[0].user_claims);
-			const profile = extractUserProfile(
-				sampleProfileClaims[0].user_claims
-			);
-			if (profile) {
+			const profile = extractUserProfile(userInfoList[0].user_claims);
+			// const profile = extractUserProfile(
+			// 	sampleProfileClaims[0].user_claims
+			// );
+			if (profile && (window as any).dataLayer) {
 				(window as any).dataLayer.push({
 					name: profile.name,
 				});
